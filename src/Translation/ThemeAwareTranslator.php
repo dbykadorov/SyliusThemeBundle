@@ -104,7 +104,7 @@ final class ThemeAwareTranslator implements TranslatorInterface, TranslatorBagIn
      * @psalm-suppress MissingParamType
      * @psalm-suppress MissingReturnType
      */
-    public function warmUp($cacheDir)
+    public function warmUp(string $cacheDir, ?string $buildDir = null): array
     {
         if ($this->translator instanceof WarmableInterface) {
             return $this->translator->warmUp($cacheDir);
