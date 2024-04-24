@@ -20,6 +20,7 @@ use Sylius\Bundle\ThemeBundle\Repository\ThemeRepositoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\DataCollector\DataCollector;
+use Symfony\Component\VarDumper\Cloner\Data;
 
 final class ThemeCollector extends DataCollector
 {
@@ -36,7 +37,7 @@ final class ThemeCollector extends DataCollector
      *
      * @psalm-suppress NonInvariantDocblockPropertyType
      */
-    protected $data;
+    protected array|Data $data = [];
 
     public function __construct(
         ThemeRepositoryInterface $themeRepository,
